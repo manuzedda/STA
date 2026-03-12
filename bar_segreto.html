@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Il Bar Segreto del Buttafuori</h1>
+        <p>Dimostra di poter entrare!</p>
+
+        <label for="eta">Inserisci la tua età:</label><br>
+        <input type="number" id="eta">
+        <br>
+
+        <label for="password">2. Password segreta:</label><br>
+        <input type="text" id="password" >
+        <br>
+
+        <label for="soldi">3. Quanti soldi hai?</label><br>
+        <input type="number" id="soldi" >
+        <br>
+
+        <button onclick="controllaAccesso()">Prova a entrare</button>
+
+        <p id="risultato"></p>
+    </div>
+
+
+    <script>
+     
+        function controllaAccesso() {
+            
+            let eta = document.getElementById('eta').value;
+            let password = document.getElementById('password').value;
+            let soldi = document.getElementById('soldi').value;
+
+         
+            let elementoRisultato = document.getElementById('risultato');
+
+            if (eta < 18) {
+                elementoRisultato.innerHTML = " Accesso negato. Sei troppo giovane!";
+            
+            } else {
+       
+                if (password === "banana") {
+                    
+               
+                    if (soldi >= 10) {
+                        elementoRisultato.innerHTML = " Puoi entrare nel bar segreto!";
+                    } else {
+                        elementoRisultato.innerHTML = " Soldi insufficienti!";
+                    }
+
+                } else {
+                    elementoRisultato.innerHTML = " Password sbagliata!";
+                }
+            }
+        }
+    </script>
+
+
+</body>
+</html>
