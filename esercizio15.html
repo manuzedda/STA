@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esercizo 15</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolo Banconote</title>
+</head>
+<body>
+
+    <h2>Ese_Sequenza_006</h2>
+    
+    <label>Inserisci la somma:</label>
+    <input type="number" id="somma" placeholder="Esempio: 180">
+    <button onclick="calcola()">Calcola</button>
+
+    <pre id="risultato"></pre>
+
+    <script>
+        function calcola() {
+            // Input: somma
+            let somma = parseInt(document.getElementById('somma').value);
+            
+            if (isNaN(somma)) {
+                alert("Per favore, inserisci un numero valido.");
+                return;
+            }
+
+            // Calcoli basati sul diagramma
+            let banconote50 = Math.floor(somma / 50);
+            let restoBanconote50 = somma % 50;
+
+            let banconote20 = Math.floor(restoBanconote50 / 20);
+            let restoBanconote20 = restoBanconote50 % 20;
+
+            let banconote10 = Math.floor(restoBanconote20 / 10);
+
+            // Output: risultato
+            let output = "Somma: " + somma + "\n" +
+                         "50: " + banconote50 + "\n" +
+                         "20: " + banconote20 + "\n" +
+                         "10: " + banconote10;
+
+            document.getElementById('risultato').innerText = output;
+        }
+    </script>
+
+</body>
+</html>
+</body>
+</html>
